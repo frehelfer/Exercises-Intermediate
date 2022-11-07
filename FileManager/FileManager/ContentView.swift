@@ -22,17 +22,34 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
                 
-                Button {
-                    //
-                } label: {
-                    Text("Save")
-                        .foregroundColor(.white)
-                        .padding()
-                        .padding(.horizontal)
-                        .background(.blue)
-                        .cornerRadius(10)
+                HStack {
+                    Button {
+                        vm.saveImage()
+                    } label: {
+                        Text("Save")
+                            .foregroundColor(.white)
+                            .padding()
+                            .padding(.horizontal)
+                            .background(.blue)
+                            .cornerRadius(10)
+                    }
+                    
+                    Button {
+                        vm.deleteImage()
+                    } label: {
+                        Text("Delete")
+                            .foregroundColor(.white)
+                            .padding()
+                            .padding(.horizontal)
+                            .background(.red)
+                            .cornerRadius(10)
+                    }
                 }
-
+                
+                Text(vm.infoMessage)
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.purple)
                 
                 Spacer()
             }
